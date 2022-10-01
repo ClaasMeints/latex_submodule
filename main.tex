@@ -1,0 +1,32 @@
+% Overall Settings ------------------------------------------------------------
+\documentclass[
+	12pt,						 % Schriftgröße
+	DIV=10,						 % Satzspiegelgröße Seitenränder
+	german,						 % für Umlaute, Silbentrennung etc.
+	paper=a4,					 % Papierformat
+	oneside, 
+	titlepage,					 % es wird eine Titelseite verwendet
+	parskip=half,				 % Abstand zwischen Absätzen (halbe Zeile)
+	headings=normal,			 % Größe der Überschriften verkleinern
+	listof=totoc,				 % Verzeichnisse im Inhaltsverzeichnis aufführen
+	bibliography=totoc,			 % Literaturverzeichnis im Inhaltsverzeichnis aufführen
+	numbers=noenddot,			 % Kapitelnummern ohne Punkt	
+	enabledeprecatedfontcommands % Alte Befehle zur unterstüzung von \listofsymbols	
+]{scrreprt}
+
+% Packages --------------------------------------------------------------------
+\input{packages/packages}
+
+% Style -----------------------------------------------------------------------
+\input{style/page.tex}
+\input{style/head.tex}
+
+\begin{document}
+\input{sources/titlepage.tex}
+\pagenumbering{roman}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\input{chapters.tex}
+\end{document}
